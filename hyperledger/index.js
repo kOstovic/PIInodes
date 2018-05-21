@@ -1,5 +1,5 @@
 const http = require('http');
-var fs = require('fs'); //a
+var fs = require('fs');
 const rp = require('request-promise')
 //const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
@@ -10,6 +10,7 @@ var _universityKey;
 var method; 
 var cardName;
 bizNetworkConnection =  new BusinessNetworkConnection();
+//catching event from that transaction
 bizNetworkConnection.on('event', (event) => {
     console.log("Access "+ event.memberAccessBool+" for "+event.memberAccess.member.$identifier+" at "+_universityKey+" in "+event.timestamp+"\n");
 });
@@ -33,12 +34,12 @@ async function stringFromArray(data)
 }
 
 module.exports = {
-  serverStart: async function(config){//config
-    switch(config){
+  serverStart: async function(config){
+    switch(config){ //config
       case "FER":  port = 3001 //FER 3001, FSB 3002, FFZG 3003
                   _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
                   method = "CheckAccessFER"; //CheckAccessFER, CheckAccessFSB, CheckAccessFFZG
-                  cardName = "admin@pii-szg-network"; // fer@pii-szg-network , fsb@pii-szg-network, ffzg@pii-szg-network
+                  cardName = "fer@pii-szg-network"; // fer@pii-szg-network , fsb@pii-szg-network, ffzg@pii-szg-network
                   businessNetworkDefinition = await bizNetworkConnection.connect(cardName);
                   break;
       case "FSB":  port = 3002 //FER 3001, FSB 3002, FFZG 3003
@@ -50,10 +51,10 @@ module.exports = {
       case "FFZG": port = 3003 //FER 3001, FSB 3002, FFZG 3003
                   _universityKey = "1111"; //0036 FER, 0035 FSB, 1111 FFZG
                   method = "CheckAccessFFZG"; //CheckAccessFER, CheckAccessFSB, CheckAccessFFZG
-                  cardName = "admin@pii-szg-network"; // fer@pii-szg-network , fsb@pii-szg-network, ffzg@pii-szg-network
+                  cardName = "ffzg@pii-szg-network"; // fer@pii-szg-network , fsb@pii-szg-network, ffzg@pii-szg-network
                   businessNetworkDefinition = await bizNetworkConnection.connect(cardName);
                   break;
-      default: port = 3001 //FER 3001, FSB 3002, FFZG 3003
+      default: port = 3004 //FER 3001, FSB 3002, FFZG 3003
               _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
               method = "CheckAccessFER"; //CheckAccessFER, CheckAccessFSB, CheckAccessFFZG
               cardName = "admin@pii-szg-network"; // fer@pii-szg-network , fsb@pii-szg-network, ffzg@pii-szg-network
@@ -66,13 +67,12 @@ module.exports = {
       response.end('Hello Node.js Server!')
     }
     
+    //creating server and making it listen on chosen port
     const server = http.createServer(requestHandler);
     await server.listen(port, (err) => {
       if (err) {
         return console.log('something bad happened', err)
       }
-      
-      
       console.log(`server is listening on ${port}`);
       
       //reapeat every 10 sec
@@ -92,18 +92,14 @@ module.exports = {
           let _tid =  _rows[0];
           let _jmbag = await stringFromArray(_rows[1]);
           
-          //forming new transaction
-          
+          //forming new transaction and sending transaction to chaincode
           let factory = businessNetworkDefinition.getFactory();
           let transaction    = factory.newTransaction('org.szg', method);
           transaction.universityComponent  = factory.newRelationship('org.szg', 'UniversityComponent', _universityKey);
           transaction.member = factory.newRelationship('org.szg', 'Member', _jmbag);
           transaction.tid = _tid;
           
-          //sending transaction to chaincode and catching event from that transaction 
-          
-
-        
+          //sending transaction to chaincode        
           await bizNetworkConnection.submitTransaction(transaction);
           
         });  

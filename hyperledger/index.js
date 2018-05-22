@@ -4,16 +4,13 @@ const rp = require('request-promise')
 //const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
 const { BusinessNetworkDefinition, CertificateUtil, IdCard } = require('composer-common');
-const filename = "inputsTest.csv";// inputsTest.csv tid,jmbag - only 1 member; inputs.csv tid,jmbag; inputsTime.csv tid,jmbag,ttime
+const filename = "inputs.csv";// inputsTest.csv tid,jmbag - only 1 member; inputs.csv tid,jmbag; inputsTime.csv tid,jmbag,ttime
 var port; 
 var _universityKey; 
 var method; 
 var cardName;
 bizNetworkConnection =  new BusinessNetworkConnection();
-//catching event from that transaction
-bizNetworkConnection.on('event', (event) => {
-    console.log("Access "+ event.memberAccessBool+" for "+event.memberAccess.member.$identifier+" at "+_universityKey+" in "+event.timestamp+"\n");
-});
+
 
 //promise to get random number of the line
 async function getRandomLine(lines) {
@@ -61,6 +58,12 @@ module.exports = {
               businessNetworkDefinition = await bizNetworkConnection.connect(cardName);
               break;
     }
+  //catching event from that transaction
+  bizNetworkConnection.on('event', (event) => {
+    if(event.memberAccess.toString().includes(method) == true){
+      console.log("Access "+ event.memberAccessBool+" for "+event.memberAccess.member.$identifier+" at "+_universityKey+" in "+event.timestamp+"\n");
+    }
+  });
     
     const requestHandler = (request, response) => {
       console.log(request.url)
@@ -93,7 +96,7 @@ module.exports = {
           let _jmbag = await stringFromArray(_rows[1]);
           
           //forming new transaction and sending transaction to chaincode
-          let factory = businessNetworkDefinition.getFactory();
+          let factory = await businessNetworkDefinition.getFactory();
           let transaction    = factory.newTransaction('org.szg', method);
           transaction.universityComponent  = factory.newRelationship('org.szg', 'UniversityComponent', _universityKey);
           transaction.member = factory.newRelationship('org.szg', 'Member', _jmbag);
@@ -103,7 +106,7 @@ module.exports = {
           await bizNetworkConnection.submitTransaction(transaction);
           
         });  
-      }, 10000);
+      }, 15000);
     })
   }
 }

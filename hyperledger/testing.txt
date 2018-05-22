@@ -1,0 +1,94 @@
+#asset
+
+{
+  "$class": "org.szg.UniversityComponent",
+  "universityKey": "0036",
+  "universityName": "FER",
+  "opening": 11000,
+  "closing": 80000
+}
+
+{
+  "$class": "org.szg.UniversityComponent",
+  "universityKey": "0035",
+  "universityName": "FSB",
+  "opening": 15000,
+  "closing": 70000
+}
+
+{
+  "$class": "org.szg.UniversityComponent",
+  "universityKey": "1111",
+  "universityName": "FFZG",
+  "opening": 18000,
+  "closing": 78000
+}
+
+#sysAdmin
+
+{
+  "$class": "org.szg.SystemAdministrator",
+  "jmbag": "0036000000",
+  "firstName": "SysAdminFer",
+  "lastName": "a",
+  "jobPosition": "",
+  "universityComponent": "resource:org.szg.UniversityComponent#0036",
+  "transactionAuthorized": [],
+  "transactionRevoke": [],
+  "memberType": "Staff",
+  "tid": "E200341201301700026A9999"
+}
+
+{
+  "$class": "org.szg.SystemAdministrator",
+  "jmbag": "0035000000",
+  "firstName": "SysAdminFsb",
+  "lastName": "a",
+  "jobPosition": "",
+  "universityComponent": "resource:org.szg.UniversityComponent#0035",
+  "transactionAuthorized": [],
+  "transactionRevoke": [],
+  "memberType": "Staff",
+  "tid": "E200341201301700026A9998"
+}
+
+{
+  "$class": "org.szg.SystemAdministrator",
+  "jmbag": "1111000000",
+  "firstName": "SysAdminFfzg",
+  "lastName": "a",
+  "jobPosition": "",
+  "universityComponent": "resource:org.szg.UniversityComponent#1111",
+  "transactionAuthorized": [],
+  "transactionRevoke": [],
+  "memberType": "Staff",
+  "tid": "E200341201301700026A9997"
+}
+
+#member
+
+{
+  "$class": "org.szg.Member",
+  "jmbag": "0036111199",
+  "firstName": "k",
+  "lastName": "e",
+  "universityComponent": "resource:org.szg.UniversityComponent#0036",
+  "memberType": "Student",
+  "tid": "E200341201301700026A6991"
+}
+
+#transaction
+
+{
+  "$class": "org.szg.CheckAccessFER",
+  "member": "resource:org.szg.Member#0036111199",
+  "universityComponent": "resource:org.szg.UniversityComponent#0036",
+  "tid": "E200341201301700026A6991"
+}
+
+{
+  "$class": "org.szg.CheckAccessFER",
+  "member": "resource:org.szg.Member#0035011199",
+  "universityComponent": "resource:org.szg.UniversityComponent#0036",
+  "tid": "E200341201301700026A6B67"
+}

@@ -93,7 +93,7 @@ module.exports = {
         somebody2.firstName = 'ana';
         somebody2.lastName = 'anic';
         somebody2.memberType = 'Student';
-        somebody2.tid = "E200341201301700026A6B92";
+        somebody2.tid = "E200341201301700026A6B22";
         somebody2.universityComponent = FERRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '0036111112');
@@ -209,28 +209,28 @@ module.exports = {
         somebody.lastName = 'afkic';
         somebody.memberType = 'Student';
         somebody.tid = "E200341201301700026A6B38";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FSBRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '0035111192');
         somebody2.firstName = 'ana';
         somebody2.lastName = 'nic';
         somebody2.memberType = 'Student';
         somebody2.tid = "E200341201301700026A6B41";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FSBRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '0035111195');
         somebody3.firstName = 'sts';
         somebody3.lastName = 'ckc';
         somebody3.memberType = 'Student';
         somebody3.tid = "E200341201301700026A6B42";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FSBRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '0035111193');
         somebody5.firstName = 'gskg';
         somebody5.lastName = 'ttdk';
         somebody5.memberType = 'Student';
         somebody5.tid = "E200341201301700026A6B43";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FSBRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         
@@ -240,28 +240,28 @@ module.exports = {
         somebody.lastName = 'mafhkic';
         somebody.memberType = 'Student';
         somebody.tid = "E200341201301700026A6B44";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FSBRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '0035111196');
         somebody2.firstName = 'anha';
         somebody2.lastName = 'aninc';
         somebody2.memberType = 'Student';
         somebody2.tid = "E200341201301700026A6B45";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FSBRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '0035111197');
         somebody3.firstName = 'sts';
         somebody3.lastName = 'ctcn';
         somebody3.memberType = 'Profesor';
         somebody3.tid = "E200341201301700026A6B46";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FSBRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '0035111188');
         somebody5.firstName = 'gsg';
         somebody5.lastName = 'ttmd';
         somebody5.memberType = 'Profesor';
         somebody5.tid = "E200341201301700026A6B49";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FSBRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         
@@ -270,28 +270,28 @@ module.exports = {
         somebody.lastName = 'mafkmc';
         somebody.memberType = 'Staff';
         somebody.tid = "E200341201301700026A6B47";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FSBRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '0035111198');
         somebody2.firstName = 'ana';
         somebody2.lastName = 'amic';
         somebody2.memberType = 'Staff';
         somebody2.tid = "E200341201301700026A6B69";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FSBRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '0035011199');
         somebody3.firstName = 'sts';
         somebody3.lastName = 'cbc';
         somebody3.memberType = 'Staff';
         somebody3.tid = "E200341201301700026A6B67";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FSBRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '1111555660');
         somebody5.firstName = 'bsg';
         somebody5.lastName = 'tbd';
         somebody5.memberType = 'Student';
         somebody5.tid = "E200341201301700026A6B58";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FFZGRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         
@@ -300,28 +300,28 @@ module.exports = {
         somebody.lastName = 'mafkib';
         somebody.memberType = 'Student';
         somebody.tid = "E200341201301700026A6B51";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FFZGRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '1111555662');
         somebody2.firstName = 'bna';
         somebody2.lastName = 'vnic';
         somebody2.memberType = 'Student';
         somebody2.tid = "E200341201301700026A6B52";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FFZGRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '1111555663');
         somebody3.firstName = 'sggs';
         somebody3.lastName = 'ctc';
         somebody3.memberType = 'Student';
         somebody3.tid = "E200341201301700026A6B53";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FFZGRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '1111555664');
         somebody5.firstName = 'gsge';
         somebody5.lastName = 'trd';
         somebody5.memberType = 'Profesor';
         somebody5.tid = "E200341201301700026A6B54";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FFZGRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         
@@ -330,28 +330,28 @@ module.exports = {
         somebody.lastName = 'mrfkic';
         somebody.memberType = 'Profesor';
         somebody.tid = "E200341201301700026A6B55";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FFZGRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '1111555666');
         somebody2.firstName = 'anr';
         somebody2.lastName = 'anicr';
         somebody2.memberType = 'Profesor';
         somebody2.tid = "E200341201301700026A6B56";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FFZGRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '1111555667');
         somebody3.firstName = 'stsz';
         somebody3.lastName = 'ctzc';
         somebody3.memberType = 'Profesor';
         somebody3.tid = "E200341201301700026A6B64";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FFZGRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '1111555668');
         somebody5.firstName = 'gzg';
         somebody5.lastName = 'ttz';
         somebody5.memberType = 'Profesor';
         somebody5.tid = "E200341201301700026A6B57";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FFZGRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         
@@ -361,28 +361,28 @@ module.exports = {
         somebody.lastName = 'mafzzc';
         somebody.memberType = 'Student';
         somebody.tid = "E200341201301700026A6B68";
-        somebody.universityComponent = FERRelation;
+        somebody.universityComponent = FFZGRelation;
         
         somebody2 = factory.newResource(namespace, participantType, '1111555657');
         somebody2.firstName = 'azra';
         somebody2.lastName = 'anzc';
         somebody2.memberType = 'Staff';
         somebody2.tid = "E200341201301700026A6B66";
-        somebody2.universityComponent = FERRelation;
+        somebody2.universityComponent = FFZGRelation;
         
         somebody3 = factory.newResource(namespace, participantType, '1111555656');
         somebody3.firstName = 'sts';
         somebody3.lastName = 'czuc';
         somebody3.memberType = 'Staff';
         somebody3.tid = "E200341201301700026A6B65";
-        somebody3.universityComponent = FERRelation;
+        somebody3.universityComponent = FFZGRelation;
         
         somebody5 = factory.newResource(namespace, participantType, '1111555655');
         somebody5.firstName = 'gusg';
         somebody5.lastName = 'tud';
         somebody5.memberType = 'Staff';
         somebody5.tid = "E200341201301700026A6B99";
-        somebody5.universityComponent = FERRelation;
+        somebody5.universityComponent = FFZGRelation;
         
         await memberRegistry.addAll([somebody, somebody2, somebody3,somebody5]);
         

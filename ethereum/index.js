@@ -6,14 +6,14 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 var piiszg_artifacts = require('./piiSZG.json');
 
-var piiSZG = new web3.eth.Contract(piiszg_artifacts.abi, piiszg_artifacts.networks[1337].address);
+var piiSZG = new web3.eth.Contract(piiszg_artifacts.abi, piiszg_artifacts.networks[1337].address);/*
 var subscription = web3.eth.subscribe('logs', {
 }, function(error, result){
   if (!error)
       console.log("nj "+log);
-});
+});*/
 var numGas = 200000;
-const filename = "inputsTest.csv";// inputsTest.csv tid,jmbag - only 1 member; inputs.csv tid,jmbag; inputsTime.csv tid,jmbag,ttime
+const filename = "inputs.csv";// inputsTest.csv tid,jmbag - only 1 member; inputs.csv tid,jmbag; inputsTime.csv tid,jmbag,ttime
 var port; 
 var _universityKey, universityKeyHash, universityKeyHashed;
 var accounts, account;
@@ -65,6 +65,19 @@ module.exports = {
                universityKeyHashed = "0x"+universityKeyHash;
               break;
     }
+
+    await web3.eth.getAccounts(function(err, accs) {
+      if (err != null) {
+        console.log("There was an error fetching your accounts.");
+        return;
+    }
+    if (accs.length == 0) {
+      console.log("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
+      return;
+    }  
+    accounts = accs;
+    account = accounts[0];
+    });
     
     const requestHandler = (request, response) => {
       console.log(request.url)
@@ -80,18 +93,7 @@ module.exports = {
       console.log(`server is listening on ${port}`);
           // Get the initial account balance so it can be displayed.
 
-      web3.eth.getAccounts(function(err, accs) {
-        if (err != null) {
-          console.log("There was an error fetching your accounts.");
-          return;
-      }
-      if (accs.length == 0) {
-        console.log("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
-        return;
-      }  
-      accounts = accs;
-      account = accounts[0];
-      });
+
 
       //reapeat every 10 sec
       setInterval(async function () {
@@ -113,20 +115,17 @@ module.exports = {
           let jmbagHashed = "0x"+jmbagHash;
           let d = new Date();
           let n = Date.now(); 
-          let ttime = d.getHours()*hour+d.getMinutes()*minute;
+          let ttime = d.getHours()*hour+d.getMinutes()*minute+d.getSeconds();
           //console.log(jmbagHashed+" "+ universityKeyHashed+" "+ ttime+" "+ n+" "+ _tid)
           
-          //forming new transaction and sending transaction to smart contract
-          /*console.log("aa "+isAccountLocked(account))
-          piiSZG.methods.getClosingTime(universityKeyHashed).send({from: account})
-            .then(function(_p){console.log("hehe "+_p)})
-            piiSZG.methods.getAccessFromMem(jmbagHashed,n).call()
-            .then(function(_p){console.log("lol1 "+JSON.stringify(_p))})*/
-            
           piiSZG.methods.callAccessTransaction(jmbagHashed, universityKeyHashed, ttime, n, _tid).send({from: account, gas: numGas})
-            .then(function(_p){console.log("Access "+JSON.stringify(_p.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed+" at "+universityKeyHashed+" in "+Date(n).toLocaleString()))} )
-            /*piiSZG.methods.getAccessFromMem(jmbagHashed,n).call()
-            .then(function(_p){console.log("lol2 "+JSON.stringify(_p))})*/
+            .then(function(retValue){
+              if(JSON.stringify(retValue.events.ControlEvent.returnValues["0"]) == "null") 
+                console.log("Access false for "+jmbagHashed+" at "+universityKeyHashed+" in "+Date(n).toLocaleString())
+              else
+                console.log("Access "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"])+" for "+jmbagHashed+" at "+universityKeyHashed+" in "+Date(n).toLocaleString())} 
+            )
+
         });  
       }, 10000);
     })

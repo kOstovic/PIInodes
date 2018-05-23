@@ -41,7 +41,7 @@ module.exports = {
         _universityComponenetType = 0;
         _openingTime = 18000;
         _closingTime = 82800;
-        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: account, gas: numGas})
+        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: accounts[0], gas: numGas})
         .then(function(retValue){
           console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+universityKeyHashed))} 
         )
@@ -52,7 +52,7 @@ module.exports = {
         _universityComponenetType = 1;
         _openingTime = 18000;
         _closingTime = 75600;
-        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: account, gas: numGas})
+        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: accounts[1], gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+universityKeyHashed))}  
         )
@@ -63,7 +63,7 @@ module.exports = {
         _universityComponenetType = 2;
         _openingTime = 28800;
         _closingTime = 72000;
-        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: account, gas: numGas})
+        piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: accounts[2], gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+universityKeyHashed))}  
         )*/

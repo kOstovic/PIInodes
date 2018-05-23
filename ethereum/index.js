@@ -6,7 +6,8 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 var piiszg_artifacts = require('./piiSZG.json');
 
-var piiSZG = new web3.eth.Contract(piiszg_artifacts.abi, piiszg_artifacts.networks[1337].address);/*
+var piiSZG = new web3.eth.Contract(piiszg_artifacts.abi, piiszg_artifacts.networks[1337].address);
+/*catching event from that transaction
 var subscription = web3.eth.subscribe('logs', {
 }, function(error, result){
   if (!error)
@@ -19,9 +20,6 @@ var _universityKey, universityKeyHash, universityKeyHashed;
 var accounts, account;
 const hour = 3600;
 const minute = 60;
-
-//catching event from that transaction
-
 
 //promise to get random number of the line
 async function getRandomLine(lines) {
@@ -43,29 +41,7 @@ async function stringFromArray(data)
 
 module.exports = {
   serverStart: async function(config){
-    switch(config){ //config
-      case "FER":  port = 3005 //FER 3005, FFZG 3006, FSB 3007
-                  _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
-                   universityKeyHash = Sha1(_universityKey);
-                   universityKeyHashed = "0x"+universityKeyHash;
-                  break;
-      case "FFZG":  port = 3006 //FER 3005, FFZG 3006, FSB 3007
-                  _universityKey = "1111"; //0036 FER, 0035 FSB, 1111 FFZG
-                   universityKeyHash = Sha1(_universityKey);
-                   universityKeyHashed = "0x"+universityKeyHash;
-                  break;
-      case "FSB": port = 3007 //FER 3005, FFZG 3006, FSB 3007
-                  _universityKey = "0035"; //0036 FER, 0035 FSB, 1111 FFZG
-                   universityKeyHash = Sha1(_universityKey);
-                   universityKeyHashed = "0x"+universityKeyHash;
-                  break;
-      default: port = 3008 //FER 3005, FFZG 3006, FSB 3007
-              _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
-               universityKeyHash = Sha1(_universityKey);
-               universityKeyHashed = "0x"+universityKeyHash;
-              break;
-    }
-
+    // Get the initial account and set up config depending on input
     await web3.eth.getAccounts(function(err, accs) {
       if (err != null) {
         console.log("There was an error fetching your accounts.");
@@ -76,9 +52,34 @@ module.exports = {
       return;
     }  
     accounts = accs;
-    account = accounts[0];
+    switch(config){ //config
+      case "FER":  port = 3005 //FER 3005, FFZG 3006, FSB 3007
+                  _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
+                   universityKeyHash = Sha1(_universityKey);
+                   universityKeyHashed = "0x"+universityKeyHash;
+                   account = accounts[0];
+                  break;
+      case "FFZG":  port = 3006 //FER 3005, FFZG 3006, FSB 3007
+                  _universityKey = "1111"; //0036 FER, 0035 FSB, 1111 FFZG
+                   universityKeyHash = Sha1(_universityKey);
+                   universityKeyHashed = "0x"+universityKeyHash;
+                   account = accounts[1];
+                  break;
+      case "FSB": port = 3007 //FER 3005, FFZG 3006, FSB 3007
+                  _universityKey = "0035"; //0036 FER, 0035 FSB, 1111 FFZG
+                   universityKeyHash = Sha1(_universityKey);
+                   universityKeyHashed = "0x"+universityKeyHash;
+                   account = accounts[2];
+                  break;
+      default: port = 3008 //FER 3005, FFZG 3006, FSB 3007
+              _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
+               universityKeyHash = Sha1(_universityKey);
+               universityKeyHashed = "0x"+universityKeyHash;
+               account = accounts[0];
+              break;
+    } 
     });
-    
+ 
     const requestHandler = (request, response) => {
       console.log(request.url)
       response.end('Hello Node.js Server!')
@@ -91,9 +92,6 @@ module.exports = {
         return console.log('something bad happened', err)
       }
       console.log(`server is listening on ${port}`);
-          // Get the initial account balance so it can be displayed.
-
-
 
       //reapeat every 10 sec
       setInterval(async function () {

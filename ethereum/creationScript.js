@@ -35,7 +35,7 @@ module.exports = {
 
         //add 3 university components
         //comment out if already made it
-        /*_universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
+        _universityKey = "0036"; //0036 FER, 0035 FSB, 1111 FFZG
         universityKeyHash = Sha1(_universityKey);
         universityKeyHashed = "0x"+universityKeyHash;
         _universityComponenetType = 0;
@@ -66,7 +66,7 @@ module.exports = {
         piiSZG.methods.createUniversityComponenet(universityKeyHashed, _universityComponenetType, _openingTime, _closingTime).send({from: accounts[2], gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+universityKeyHashed))}  
-        )*/
+        )
 
 
         //add 40 members

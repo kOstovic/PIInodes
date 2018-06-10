@@ -92,3 +92,5 @@
   "universityComponent": "resource:org.szg.UniversityComponent#0036",
   "tid": "E200341201301700026A6B67"
 }
+
+node index.js serverStart FER

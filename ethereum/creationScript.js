@@ -30,7 +30,10 @@ module.exports = {
             return;
           }  
           accounts = accs;
-          account = accounts[0];
+          account = accounts[3];
+          accountFFZG = accounts[1];
+          accountFSB = accounts[2];
+          accountFER = accounts[0];
           });
 
         //add 3 university components
@@ -77,7 +80,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B21";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -88,7 +91,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B22";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -99,7 +102,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B23";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -110,7 +113,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B24";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -121,7 +124,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B25";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -132,7 +135,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B26";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -143,7 +146,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B27";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -154,7 +157,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B28";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -165,7 +168,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B29";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -176,7 +179,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B2A";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -187,7 +190,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B31";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -198,7 +201,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B32";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -209,7 +212,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B33";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -220,7 +223,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B34";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -231,7 +234,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B35";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -242,7 +245,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 0;
         _tid = "E200341201301700026A6B36";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -253,7 +256,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B38";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -264,7 +267,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B41";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFER, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -275,7 +278,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B42";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -286,7 +289,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B43";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -297,7 +300,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B44";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -308,7 +311,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B45";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -319,7 +322,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B49";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -330,7 +333,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B47";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -341,7 +344,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B45";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -352,7 +355,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B69";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -363,7 +366,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 2;
         _tid = "E200341201301700026A6B67";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFSB, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -374,7 +377,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B58";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -385,7 +388,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B51";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -396,7 +399,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B52";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -407,7 +410,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B53";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -418,7 +421,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B54";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -429,7 +432,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B55";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -440,7 +443,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B56";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -451,7 +454,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B64";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -462,7 +465,7 @@ module.exports = {
         _personType = 1;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B57";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -473,7 +476,7 @@ module.exports = {
         _personType = 0;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B68";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -484,7 +487,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B66";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -495,7 +498,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B65";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )
@@ -506,7 +509,7 @@ module.exports = {
         _personType = 2;
         _universityComponenetType = 1;
         _tid = "E200341201301700026A6B99";
-        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: account, gas: numGas})
+        piiSZG.methods.createMember(jmbagHashed, _personType, _universityComponenetType, _tid).send({from: accountFFZG, gas: numGas})
         .then(function(retValue){
             console.log("Make "+JSON.stringify(retValue.events.ControlEvent.returnValues["0"]+" for "+jmbagHashed))}  
         )   

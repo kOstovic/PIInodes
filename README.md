@@ -1,14 +1,15 @@
-# diplomskiPIInodes
+## diplomskiPIInodes
 
-npm install -g angular bootstrap browserify geth jquery truffle require requirejs web3 sha1 webpack make-runnable request-promise truffle-contract net
 
-npm install -g angular bootstrap jquery require requirejs chai-as-promised chai make-runnable request-promise truffle-contract net composer-admin composer-client composer-common http path
-
+npm install -g angular bootstrap browserify geth jquery truffle require requirejs web3 sha1 webpack make-runnable request-promise truffle-contract net winston
 cd ethereum
+
 node creationScript.js creationScript
 node index.js serverStart FER
 node index.js serverStart FSB
 node index.js serverStart FFZG
+
+npm install -g angular bootstrap jquery require requirejs chai-as-promised chai make-runnable request-promise truffle-contract net composer-admin composer-client composer-common http path
 
 cd hyperledger
 node creationScript.js creationScript
